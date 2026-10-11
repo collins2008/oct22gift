@@ -40,49 +40,61 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-html {
-  height: 100%;
+html, body {
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-color: #fce4ec;
+  background-image: url('Assets/gingham_clean.png');
+  background-repeat: repeat;
+  background-size: 110px 110px;
+  overflow-x: hidden;
 }
 
 body {
-  background: #fce4ec;
   font-family: var(--font-serif);
-  overflow: hidden;
   touch-action: manipulation;
-  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ---- Phone Frame ---- */
 .phone-frame {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 440px;
+  min-height: 100vh;
   min-height: 100dvh;
-  height: 100dvh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  padding: 16px 12px;
 }
 
-/* ---- Background Layers (Full Bleed Viewport) ---- */
+/* ---- Background Layers (Heart wallpaper overlay for letters) ---- */
 .bg-layer {
   position: fixed;
   inset: 0;
   width: 100vw;
+  height: 100vh;
   height: 100dvh;
   z-index: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
-/* Clean, mathematically seamless gingham pattern */
+/* Gingham is default on body; bg-gingham layer stays transparent */
 .bg-gingham {
-  background-image: url('Assets/gingham_clean.png');
-  background-repeat: repeat;
-  background-size: 110px 110px;
+  opacity: 0;
 }
 
 /* Soft blush crumpled heart wallpaper for letters */
@@ -91,19 +103,24 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 1;
 }
 
 /* ---- Flower Decoration (top-right corner on gingham screens) ---- */
 .flower-decor {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: min(130px, 30vw);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: clamp(80px, 25vw, 120px);
   height: auto;
-  z-index: 5;
+  z-index: 15;
   pointer-events: none;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
   transition: opacity 0.3s ease;
+}
+.flower-decor.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ---- Loader ---- */

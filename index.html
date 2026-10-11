@@ -28,7 +28,21 @@
   <link rel="preload" href="Assets/torn_paper_clean.webp" as="image">
   <link rel="preload" href="Assets/char_cat_shy.webp" as="image">
   
-  <link rel="stylesheet" href="style.css">
+  <!-- Immediate cache killer for legacy service workers and stale browser caches -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (var r of regs) { r.unregister(); }
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(keys) {
+        for (var k of keys) { caches.delete(k); }
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css?v=20261011_v8">
 </head>
 <body>
   <!-- Loader -->
@@ -45,10 +59,9 @@
   <!-- Global Background Layer (Full Bleed Viewport) -->
   <div id="global-bg" class="bg-layer bg-gingham"></div>
   
-  <!-- Transparent Flower Decoration (visible on gingham screens) -->
-  <img id="flower-decor" src="Assets/flower_top_right.webp" class="flower-decor" alt="Flower decoration" width="130" height="165">
-
   <main class="phone-frame">
+    <!-- Transparent Flower Decoration (visible on gingham screens) -->
+    <img id="flower-decor" src="Assets/flower_top_right.webp" class="flower-decor" alt="Flower decoration" width="130" height="165">
 
     <!-- Screen 1: Intro 1 -->
     <section id="s-intro1" class="screen active">
@@ -172,13 +185,6 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
-      });
-    }
-  </script>
+  <script src="script.js?v=20261011_v8"></script>
 </body>
 </html>
