@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <!-- Gingham Plaid Pattern -->
+  </defs>
+  <!-- Base Warm Cream / Ivory Background -->
+  <rect width="80" height="80" fill="#FFF7EF" />
+
+  <!-- Broad Vertical Soft Pink Band -->
+  <rect x="0" y="0" width="36" height="80" fill="#F7BBC7" opacity="0.55" />
+
+  <!-- Broad Horizontal Soft Pink Band -->
+  <rect x="0" y="0" width="80" height="36" fill="#F7BBC7" opacity="0.55" />
+
+  <!-- Thin Vertical Accent Lines -->
+  <rect x="18" y="0" width="2" height="80" fill="#D95C7A" opacity="0.45" />
+  <rect x="58" y="0" width="2" height="80" fill="#D95C7A" opacity="0.3" />
+
+  <!-- Thin Horizontal Accent Lines -->
+  <rect x="0" y="18" width="80" height="2" fill="#D95C7A" opacity="0.45" />
+  <rect x="0" y="58" width="80" height="2" fill="#D95C7A" opacity="0.3" />
+
+  <!-- Subtle Double Stitch Lines -->
+  <rect x="8" y="0" width="1" height="80" fill="#E88299" opacity="0.35" />
+  <rect x="28" y="0" width="1" height="80" fill="#E88299" opacity="0.35" />
+  <rect x="0" y="8" width="80" height="1" fill="#E88299" opacity="0.35" />
+  <rect x="0" y="28" width="80" height="1" fill="#E88299" opacity="0.35" />
+</svg>

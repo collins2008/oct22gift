@@ -1,0 +1,25 @@
+# ==========================================
+# .gitignore — "Open When" Website
+# ==========================================
+
+# Unused Assets & Raw Working Files
+unused_assets/
+
+# Reference Video & Inspection Frame Captures
+website inspo.mp4
+reference/
+
+# Python Cache & Scratch Files
+__pycache__/
+*.pyc
+*.pyo
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local IDE & Editor Settings
+.vscode/
+.idea/
+*.swp

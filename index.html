@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#fce4ec">
+  
+  <title>Open When... A Gift For You</title>
+  <link rel="icon" type="image/png" href="Assets/favicon.png">
+  <link rel="apple-touch-icon" href="Assets/favicon.png">
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A little something for you ❤️">
+  <meta property="og:description" content="Open when you need me...">
+  <meta property="og:image" content="Assets/og_preview.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A little something for you ❤️">
+  <meta name="twitter:description" content="Open when you need me...">
+  <meta name="twitter:image" content="Assets/og_preview.png">
+  
+  <!-- Preload critical Screen 1 assets only -->
+  <link rel="preload" href="Assets/gingham_clean.png" as="image">
+  <link rel="preload" href="Assets/flower_top_right.webp" as="image">
+  <link rel="preload" href="Assets/torn_paper_clean.webp" as="image">
+  <link rel="preload" href="Assets/char_cat_shy.webp" as="image">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="heart-pulse"></div>
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="bg-music" src="" preload="none" loop></audio>
+
+  <!-- Non-blocking cute toast message -->
+  <div id="toast" class="toast hidden"></div>
+
+  <main class="phone-frame">
+    <!-- Global Background Layer -->
+    <div id="global-bg" class="bg-layer bg-gingham"></div>
+    
+    <!-- Transparent Flower Decoration (visible on gingham screens) -->
+    <img id="flower-decor" src="Assets/flower_top_right.webp" class="flower-decor" alt="Flower decoration" width="130" height="165">
+
+    <!-- Screen 1: Intro 1 -->
+    <section id="s-intro1" class="screen active">
+      <div class="card-wrap">
+        <img src="Assets/torn_paper_clean.webp" class="torn-paper-img" alt="" width="360" height="250">
+        <div class="card-inner">
+          <div class="card-text-box">
+            <p id="t-intro1" class="font-hand"></p>
+          </div>
+          <div class="card-action-row between">
+            <div class="sticker-slot">
+              <img src="Assets/char_cat_shy.webp" class="char-slot bobbing" alt="Cute cat" width="85" height="80">
+            </div>
+            <button id="btn-what" class="pill-btn" aria-label="What?">what?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 2: Intro 2 -->
+    <section id="s-intro2" class="screen">
+      <div class="card-wrap">
+        <img src="Assets/torn_paper_clean.webp" class="torn-paper-img" alt="" width="360" height="250">
+        <div class="card-inner">
+          <div class="card-text-box">
+            <p id="t-intro2" class="font-hand"></p>
+          </div>
+          <div class="card-action-row three-col">
+            <button id="btn-yes" class="pill-btn" aria-label="Yes">yes</button>
+            <div class="sticker-slot-center">
+              <img src="Assets/char_bubu_bouquet.webp" class="char-center bobbing" alt="Bear with bouquet and panda" width="85" height="80">
+            </div>
+            <div class="no-btn-slot">
+              <button id="btn-no" class="pill-btn" aria-label="No">no</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 3: Intro 3 -->
+    <section id="s-intro3" class="screen">
+      <div class="card-wrap">
+        <img src="Assets/torn_paper_clean.webp" class="torn-paper-img" alt="" width="360" height="250">
+        <div class="card-inner">
+          <div class="card-text-box">
+            <p id="t-intro3" class="font-hand"></p>
+          </div>
+          <div class="card-action-row between">
+            <div class="sticker-slot">
+              <img src="Assets/char_cat_lying.webp" class="char-slot bobbing" alt="Pleading cat lying down" width="85" height="45">
+            </div>
+            <button id="btn-fine" class="pill-btn" aria-label="Fine">fine</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 4: Intro 4 -->
+    <section id="s-intro4" class="screen">
+      <div class="card-wrap">
+        <img src="Assets/torn_paper_clean.webp" class="torn-paper-img" alt="" width="360" height="250">
+        <div class="card-inner">
+          <div class="card-text-box">
+            <p class="font-hand-small">yay!</p>
+            <p id="t-intro4" class="font-serif-intro"></p>
+          </div>
+          <div class="card-action-row between">
+            <div class="sticker-slot">
+              <img src="Assets/tkthao219-bubududu.webp" class="char-slot bobbing" alt="Hugging bears" width="85" height="80">
+            </div>
+            <button id="btn-ready" class="pill-btn" aria-label="Yes!!">yes!!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 5: Envelope Menu -->
+    <section id="s-menu" class="screen">
+      <div class="card-wrap card-wrap-menu">
+        <img src="Assets/torn_paper_clean.webp" class="torn-paper-img" alt="" width="375" height="310">
+        <div class="card-inner card-inner-menu">
+          <div id="envelope-grid" class="envelope-grid">
+            <!-- 5 envelopes generated via JS -->
+          </div>
+        </div>
+      </div>
+      <!-- Blue circular music toggle button in bottom-right -->
+      <button id="music-toggle" class="music-toggle" title="Toggle background music" aria-label="Toggle background music">▶</button>
+    </section>
+
+    <!-- Screen 6: Letter Screen -->
+    <section id="s-letter" class="screen">
+      <div id="letter-container" class="simple-card">
+        <img id="letter-torn-img" src="Assets/torn_paper_clean.webp" class="torn-paper-img hidden" alt="" width="370" height="400">
+        
+        <div id="letter-layout" class="letter-content-layout">
+          <!-- Optional Polaroid photo frame -->
+          <div id="letter-photo-frame" class="photo-frame hidden">
+            <img id="letter-photo" src="" alt="Photo memory">
+            <p id="letter-caption" class="caption">I love you</p>
+          </div>
+
+          <!-- Letter message text -->
+          <div class="letter-text-box">
+            <p id="letter-text" class="font-serif"></p>
+          </div>
+        </div>
+        
+        <!-- Back button (centered at bottom) -->
+        <button id="btn-back" class="back-btn" title="Back to menu" aria-label="Back to envelope menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        
+        <!-- Peeking character (bottom-right corner) -->
+        <img id="letter-character" src="" class="char-letter bobbing" alt="Peeking character">
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
