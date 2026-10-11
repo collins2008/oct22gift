@@ -1,4 +1,4 @@
-const CACHE_NAME = 'open-when-v4';
+const CACHE_NAME = 'open-when-v5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

@@ -52,26 +52,27 @@ body {
   min-height: 100dvh;
 }
 
-/* ---- Phone Frame (Desktop Centering) ---- */
+/* ---- Phone Frame ---- */
 .phone-frame {
   position: relative;
   width: 100%;
-  max-width: 430px;
+  max-width: 460px;
   min-height: 100dvh;
   height: 100dvh;
   margin: 0 auto;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 30px rgba(0,0,0,0.08);
+  z-index: 10;
 }
 
-/* ---- Background Layers ---- */
+/* ---- Background Layers (Full Bleed Viewport) ---- */
 .bg-layer {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100dvh;
   z-index: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -94,12 +95,12 @@ body {
 
 /* ---- Flower Decoration (top-right corner on gingham screens) ---- */
 .flower-decor {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  width: 130px;
+  width: min(130px, 30vw);
   height: auto;
-  z-index: 25;
+  z-index: 5;
   pointer-events: none;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
   transition: opacity 0.3s ease;
@@ -678,6 +679,45 @@ body {
   .pill-btn {
     font-size: 1.4rem;
     padding: 3px 16px;
+  }
+/* Tablet & Desktop mode responsiveness */
+@media (min-width: 600px) {
+  .phone-frame {
+    max-width: 540px;
+  }
+  .card-wrap {
+    max-width: 440px;
+    min-height: 280px;
+    padding: 42px 30px 28px;
+  }
+  .card-wrap-menu {
+    max-width: 480px;
+    padding: 34px 20px 28px;
+  }
+  .envelope-grid {
+    gap: 18px 18px;
+  }
+  .font-hand {
+    font-size: 2.5rem;
+  }
+  .pill-btn {
+    font-size: 2rem;
+    padding: 6px 26px;
+  }
+  .sticker-slot, .sticker-slot-center {
+    width: 100px;
+    height: 90px;
+  }
+  .char-slot, .char-center {
+    max-width: 100px;
+    max-height: 90px;
+  }
+  .simple-card {
+    max-width: 460px;
+    padding: 36px 28px 28px;
+  }
+  .font-serif {
+    font-size: 1.18rem;
   }
 }
 

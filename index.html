@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="theme-color" content="#fce4ec">
   
@@ -42,12 +42,13 @@
   <!-- Non-blocking cute toast message -->
   <div id="toast" class="toast hidden"></div>
 
+  <!-- Global Background Layer (Full Bleed Viewport) -->
+  <div id="global-bg" class="bg-layer bg-gingham"></div>
+  
+  <!-- Transparent Flower Decoration (visible on gingham screens) -->
+  <img id="flower-decor" src="Assets/flower_top_right.webp" class="flower-decor" alt="Flower decoration" width="130" height="165">
+
   <main class="phone-frame">
-    <!-- Global Background Layer -->
-    <div id="global-bg" class="bg-layer bg-gingham"></div>
-    
-    <!-- Transparent Flower Decoration (visible on gingham screens) -->
-    <img id="flower-decor" src="Assets/flower_top_right.webp" class="flower-decor" alt="Flower decoration" width="130" height="165">
 
     <!-- Screen 1: Intro 1 -->
     <section id="s-intro1" class="screen active">
