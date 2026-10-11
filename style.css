@@ -187,14 +187,13 @@ body {
 /* ---- Torn Paper Card ---- */
 .card-wrap {
   position: relative;
-  width: 90%;
-  max-width: 360px;
-  min-height: 250px;
+  width: 92%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 38px 24px 26px;
+  padding: clamp(28px, 7vw, 44px) clamp(20px, 6vw, 32px) clamp(22px, 5vw, 32px);
   margin: auto;
 }
 
@@ -206,7 +205,7 @@ body {
   object-fit: fill;
   z-index: 0;
   pointer-events: none;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.1));
 }
 
 .card-inner {
@@ -216,16 +215,17 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: clamp(12px, 3.5vw, 20px);
 }
 
 .card-text-box {
   width: 100%;
-  max-width: 220px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 5px 6px 0;
+  padding: 4px 8px 0;
 }
 
 /* ---- Action Rows (Stickers + Buttons cleanly separated) ---- */
@@ -234,7 +234,6 @@ body {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  margin-top: 24px;
   z-index: 5;
 }
 
@@ -247,10 +246,10 @@ body {
   align-items: center;
 }
 
-/* Sticker slots */
+/* Sticker slots — bigger so characters are prominent */
 .sticker-slot {
-  width: 85px;
-  height: 80px;
+  width: clamp(90px, 25vw, 120px);
+  height: clamp(90px, 25vw, 120px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -258,8 +257,8 @@ body {
 }
 
 .sticker-slot-center {
-  width: 85px;
-  height: 80px;
+  width: clamp(90px, 25vw, 120px);
+  height: clamp(90px, 25vw, 120px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -267,19 +266,17 @@ body {
 }
 
 .char-slot {
-  max-width: 85px;
-  max-height: 80px;
-  width: auto;
+  width: clamp(90px, 25vw, 120px);
   height: auto;
+  max-height: clamp(100px, 28vw, 130px);
   object-fit: contain;
   pointer-events: none !important;
 }
 
 .char-center {
-  max-width: 85px;
-  max-height: 80px;
-  width: auto;
+  width: clamp(90px, 25vw, 120px);
   height: auto;
+  max-height: clamp(100px, 28vw, 130px);
   object-fit: contain;
   pointer-events: none !important;
 }
@@ -287,8 +284,8 @@ body {
 /* "no" button evasion slot */
 .no-btn-slot {
   position: relative;
-  width: 75px;
-  height: 42px;
+  width: 80px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,11 +304,11 @@ body {
 .pill-btn {
   background: var(--cream);
   border: 1.5px solid var(--brown-border);
-  border-radius: 20px;
+  border-radius: 24px;
   font-family: var(--font-hand);
-  font-size: 1.7rem;
+  font-size: clamp(1.6rem, 5vw, 2rem);
   color: var(--brown-border);
-  padding: 4px 22px;
+  padding: 6px 26px;
   cursor: pointer;
   text-transform: lowercase;
   transition: transform 0.09s ease;
@@ -330,14 +327,14 @@ body {
 .font-hand {
   font-family: var(--font-hand);
   color: var(--pink-hand);
-  font-size: 2.1rem;
+  font-size: clamp(2rem, 7vw, 2.8rem);
   line-height: 1.2;
 }
 
 .font-hand-small {
   font-family: var(--font-hand);
   color: var(--pink-hand);
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
   line-height: 1.1;
   margin-bottom: 2px;
 }
@@ -345,7 +342,7 @@ body {
 .font-serif-intro {
   font-family: var(--font-serif);
   color: var(--pink-hand);
-  font-size: 1.35rem;
+  font-size: clamp(1.2rem, 4.5vw, 1.5rem);
   line-height: 1.35;
   font-weight: 500;
 }
@@ -353,8 +350,8 @@ body {
 .font-serif {
   font-family: var(--font-serif);
   color: var(--maroon-text);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
+  line-height: 1.7;
 }
 
 /* ---- Animations ---- */
@@ -374,10 +371,9 @@ body {
 
 /* ---- Screen 5: Envelope Menu ---- */
 .card-wrap-menu {
-  width: 92%;
-  max-width: 375px;
-  min-height: 310px;
-  padding: 30px 14px 26px;
+  width: 94%;
+  max-width: 380px;
+  padding: 26px 10px 22px;
   justify-content: center;
 }
 
@@ -390,7 +386,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 16px 14px;
+  gap: clamp(10px, 3vw, 16px) clamp(8px, 2.5vw, 14px);
   width: 100%;
 }
 
@@ -399,7 +395,7 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  width: 86px;
+  width: clamp(88px, 24vw, 108px);
   user-select: none;
   transition: transform 0.15s ease;
 }
@@ -412,11 +408,11 @@ body {
   transform: translateY(-4px);
 }
 
-/* Maroon Envelope matching reference video f_035.png */
+/* Maroon Envelope matching reference video */
 .env-wrap {
   position: relative;
-  width: 84px;
-  height: 64px;
+  width: clamp(88px, 24vw, 108px);
+  height: clamp(66px, 18vw, 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -429,19 +425,19 @@ body {
   left: 0;
   width: 0;
   height: 0;
-  border-left: 42px solid transparent;
-  border-right: 42px solid transparent;
-  border-bottom: 22px solid var(--envelope-flap);
+  border-left: clamp(44px, 12vw, 54px) solid transparent;
+  border-right: clamp(44px, 12vw, 54px) solid transparent;
+  border-bottom: clamp(22px, 6vw, 28px) solid var(--envelope-flap);
   z-index: 1;
 }
 
 /* White letter card peeking out */
 .env-letter-peek {
   position: absolute;
-  top: 8px;
-  left: 7px;
-  width: 70px;
-  height: 26px;
+  top: clamp(8px, 2vw, 12px);
+  left: clamp(6px, 1.5vw, 9px);
+  width: calc(100% - clamp(12px, 3vw, 18px));
+  height: clamp(28px, 8vw, 34px);
   background: #ffffff;
   border-radius: 2px 2px 0 0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -449,7 +445,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-hand);
-  font-size: 0.72rem;
+  font-size: clamp(0.68rem, 2vw, 0.82rem);
   color: var(--pink-hand);
   z-index: 2;
   transition: transform 0.25s ease;
@@ -460,8 +456,8 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 84px;
-  height: 44px;
+  width: 100%;
+  height: clamp(48px, 13vw, 58px);
   background: var(--envelope-body);
   border-radius: 0 0 4px 4px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -474,9 +470,9 @@ body {
 /* White pill label on front pocket */
 .env-label-strip {
   background: #ffffff;
-  padding: 1.5px 6px;
+  padding: 2px 7px;
   font-family: var(--font-serif);
-  font-size: 0.42rem;
+  font-size: clamp(0.42rem, 1.2vw, 0.52rem);
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--envelope-body);
@@ -488,13 +484,13 @@ body {
 
 /* White tag hanging below envelope */
 .env-bottom-label {
-  margin-top: 4px;
+  margin-top: 5px;
   background: #ffffff;
-  padding: 2px 7px;
+  padding: 2px 8px;
   font-family: var(--font-hand);
-  font-size: 0.8rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
   color: var(--maroon-text);
-  line-height: 1.15;
+  line-height: 1.2;
   text-align: center;
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
